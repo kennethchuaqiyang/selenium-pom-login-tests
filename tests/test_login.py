@@ -24,6 +24,8 @@ CUSTOMER_USERS = [
 def driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
     drv = webdriver.Chrome(options=options)
     drv.implicitly_wait(0)  # we use explicit waits instead
     yield drv
